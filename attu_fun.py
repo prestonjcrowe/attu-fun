@@ -8,21 +8,13 @@ from multiprocessing import Pool
 import threading
 import time
 
-# Bug your friends and log their activity on attu!
-# python attu_fun.py                    (logs all users on attu, uptimes, etc)
-# python attu_fun.py -u user1 user2 user3  (writes defualt message to targets)
-# python attu_fun.py -f ascii.txt userN (custom message)
-
-# Alex DeMeo - alexd8
-# Brian Bartels - bdb24
-# Jake Sippy - jsippy
-
 # private ssh key location
 SSH_KEY='/Users/prestoncrowe/.ssh/id_rsa'
-parser = argparse.ArgumentParser(description='Bug your friends and log their activity on attu!')
+
+parser = argparse.ArgumentParser(description='Bug your friends and log their activity on attu! With no arguments, logs active users to logs/TIMESTAMP.csv.')
 parser.add_argument('-u', nargs='+', help='list of target usernames')
-parser.add_argument('-f', nargs='?', help='filename of text to send')
 parser.add_argument('--evil', action="store_true", help='>:)')
+#parser.add_argument('-f', nargs='?', help='filename of text to send')
 args = parser.parse_args()
 
 def main():
